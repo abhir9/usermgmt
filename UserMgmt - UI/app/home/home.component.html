@@ -1,0 +1,39 @@
+﻿<head>
+    <title>Simple demonstration of AngularJS with ReSTful API - AngularCode</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/2.2.0/toaster.min.css">
+</head>
+<div>
+    <table><tr><td align="left"><img src="http://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png" style="width:100px;height:120px;" alt="user" ></td><td><H2>List of All users</H2>  </td><td align="right" style="text-align: center"><a [routerLink]="['/login']"><img src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/matte-white-square-icons-symbols-shapes/126004-matte-white-square-icon-symbols-shapes-power-button.png"  style="width:50px;height:50px;" alt="user" ></a> <h4>Welcome {{currentUser.firstName}} </h4></td></tr></table>
+    <form name="Codenx" novalidate>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>UserName</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr *ngFor="let user of users; let i = index">
+                <td>{{user._id}}</td>
+                <td><input class="form-control" type="text"  [(ngModel)]="users[i].username" name="users{{i}}.usernam" [attr.placeholder]="users[i].username"></td>
+                <td><input  class="form-control" type="text"  [(ngModel)]="users[i].firstName" name="users{{i}}.firstname" [attr.placeholder]="users[i].firstName"></td>
+                <td><input  class="form-control" type="text"  [(ngModel)]="users[i].lastName" name="users{{i}}.lastname" [attr.placeholder]="users[i].lastName"></td>
+                <td>
+                    <div class="btn-group">
+                        <button class="btn btn-danger" (click)="deleteUser(user._id)">Remove</button>
+                        <button class="btn btn-warning" (click)="updateUser(user)">Update</button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+</form>
+
+</div>
