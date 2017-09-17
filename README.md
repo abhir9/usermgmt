@@ -1,5 +1,5 @@
-# usermgmt
-this is sample program for user login &amp; registration with CRUD oprations
+# UserMgmt MEAN Stack Project
+this is sample program for user login &amp; registration with CRUD oprations with Angulae.js 2.0 , Node.js , Express, MongoDB 
 
 
 # step:1   Download/Clone porject 
