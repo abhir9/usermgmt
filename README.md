@@ -11,4 +11,3 @@ this is sample program for user login &amp; registration with CRUD oprations wit
 # step:4  'npm start' in both directory
 
 
-now let the project show you something.....
