@@ -49,7 +49,20 @@ export class HomeComponent implements OnInit {
                     this.loading = false;
                 });
     }
+	    addUser(user: User) {
+        this.loading = true;
+        this.userService.create(user)
+            .subscribe(
+                data => {
+                    this.alertService.success('Added Successfully', true);
+                    this.loadAllUsers()
+                },
+                error => {
+                    this.alertService.error(JSON.parse(error._body).message);
+                    this.loading = false;
+                });
+    }
     private loadAllUsers() {
-        this.userService.getAll().subscribe(users => { this.users = users; });
+        this.userService.getAll().subscribe(users => { this.users = users; this.users.push({'_id':'','username':'','firstName':'','lastName':'','password':''});});
     }
 }

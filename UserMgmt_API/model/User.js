@@ -59,6 +59,10 @@ function getById(_id) {
 }
 
 function create(userParam) {
+	if(userParam._id=='')
+	{	delete userParam['_id'];
+	userParam.password=userParam.username;
+	}
     var deferred = Q.defer();
 
     // validation

@@ -34,7 +34,7 @@
             }
         },
         "required": ["username", "password","firstName","lastName"],
-        "additionalProperties": false
+        "additionalProperties": true
     }
 
     }
