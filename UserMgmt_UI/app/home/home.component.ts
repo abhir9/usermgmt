@@ -63,6 +63,6 @@ export class HomeComponent implements OnInit {
                 });
     }
     private loadAllUsers() {
-        this.userService.getAll().subscribe(users => { this.users = users; this.users.push({'_id':'','username':'','firstName':'','lastName':'','password':''});});
+        this.userService.getAll().subscribe(users => { this.users = users; this.users.push({'_id':'','username':'','firstname':'','lastname':'','password':''});});
     }
 }
