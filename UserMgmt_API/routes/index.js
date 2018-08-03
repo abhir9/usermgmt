@@ -18,7 +18,13 @@ module.exports=function (app) {
          want some middleware :- add here
           */
         require('./' + routeName)(router);
-        app.use(config.appName+routeName, auth,router);
+		if(routeName.indexOf('test')>-1)
+		{
+		app.use(config.appName+routeName,router)	
+		}
+		else{
+        app.use(config.appName+routeName, auth,router);			
+		}
     });
     app.get('/*', function (req, res) {
         responseService.validateAndSend(null,responseHandler.setErrorResponse({"status":401,"message":'bad request'}),  res);
